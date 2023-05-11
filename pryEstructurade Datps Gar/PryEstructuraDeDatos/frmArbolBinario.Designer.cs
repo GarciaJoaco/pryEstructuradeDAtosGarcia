@@ -50,6 +50,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.gbxAcendente = new System.Windows.Forms.GroupBox();
             this.gbxDesendente = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.gpbElementoEliminado.SuspendLayout();
             this.gpbNuevoelemento.SuspendLayout();
@@ -218,7 +219,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(543, 508);
+            this.btnAtras.Location = new System.Drawing.Point(527, 508);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 36);
             this.btnAtras.TabIndex = 30;
@@ -236,28 +237,38 @@
             // 
             // gbxAcendente
             // 
-            this.gbxAcendente.Location = new System.Drawing.Point(246, 223);
+            this.gbxAcendente.Location = new System.Drawing.Point(12, 232);
             this.gbxAcendente.Name = "gbxAcendente";
-            this.gbxAcendente.Size = new System.Drawing.Size(178, 100);
+            this.gbxAcendente.Size = new System.Drawing.Size(284, 62);
             this.gbxAcendente.TabIndex = 32;
             this.gbxAcendente.TabStop = false;
             this.gbxAcendente.Text = "Acendente ";
             // 
             // gbxDesendente
             // 
-            this.gbxDesendente.Location = new System.Drawing.Point(440, 223);
+            this.gbxDesendente.Location = new System.Drawing.Point(350, 232);
             this.gbxDesendente.Name = "gbxDesendente";
-            this.gbxDesendente.Size = new System.Drawing.Size(178, 100);
+            this.gbxDesendente.Size = new System.Drawing.Size(252, 62);
             this.gbxDesendente.TabIndex = 33;
             this.gbxDesendente.TabStop = false;
             this.gbxDesendente.Text = "Desendente";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(473, 165);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 46);
+            this.btnBuscar.TabIndex = 34;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(639, 552);
+            this.ClientSize = new System.Drawing.Size(613, 552);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.gbxDesendente);
             this.Controls.Add(this.gbxAcendente);
             this.Controls.Add(this.treeView1);
@@ -305,5 +316,6 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.GroupBox gbxAcendente;
         private System.Windows.Forms.GroupBox gbxDesendente;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

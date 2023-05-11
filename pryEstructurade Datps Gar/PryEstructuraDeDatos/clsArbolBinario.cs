@@ -53,13 +53,111 @@ namespace PryEstructuraDeDatos
                 }
             }
         }
+        //---------------------------------------- ELIMINAR----------------------------------------------------
+        public void Eliminar(Int32 Codigo)
+        {
+            Nodo NodoPadre = Raiz;
+            Nodo Aux = Raiz;
+
+            if (Raiz != null && Raiz.Codigo == Codigo)
+            {
+                if (Raiz.izquierdo == null && Raiz.Derecho == null)
+                {
+                    Raiz = null;
+                }
+                else if (Raiz.izquierdo != null && Raiz.Derecho == null)
+                {
+                    Raiz = Raiz.izquierdo;
+                }
+                else if (Raiz.izquierdo == null && Raiz.Derecho != null)
+                {
+                    Raiz = Raiz.Derecho;
+                }
+                else
+                {
+                    Aux = Raiz.izquierdo;
+                    while (Aux.Derecho != null)
+                    {
+                        Aux = Aux.Derecho;
+                    }
+                    Aux.Derecho = Raiz.Derecho;
+                    Raiz = Raiz.izquierdo;
+                }
+            }
+            else
+            {
+                while (Aux != null && Aux.Codigo != Codigo)
+                {
+                    NodoPadre = Aux;
+                    if (Codigo < Aux.Codigo)
+                    {
+                        Aux = Aux.izquierdo;
+                    }
+                    else
+                    {
+                        Aux = Aux.Derecho;
+                    }
+                }
+                if (Aux != null)
+                {
+                    if (Aux.izquierdo == null && Aux.Derecho == null)
+                    {
+                        if (Codigo < NodoPadre.Codigo)
+                        {
+                            NodoPadre.izquierdo = null;
+                        }
+                        else
+                        {
+                            NodoPadre.Derecho = null;
+                        }
+                    }
+                    else if (Aux.izquierdo != null && Aux.Derecho == null)
+                    {
+                        if (Codigo < NodoPadre.Codigo)
+                        {
+                            NodoPadre.izquierdo = Aux.izquierdo;
+                        }
+                        else
+                        {
+                            NodoPadre.Derecho = Aux.izquierdo;
+                        }
+                    }
+                    else if (Aux.izquierdo == null && Aux.Derecho != null)
+                    {
+                        if (Codigo < NodoPadre.Codigo)
+                        {
+                            NodoPadre.izquierdo = Aux.Derecho;
+                        }
+                        else
+                        {
+                            NodoPadre.Derecho = Aux.Derecho;
+                        }
+                    }
+                    else if (Aux.izquierdo != null && Aux.Derecho != null)
+                    {
+                        if (Codigo < NodoPadre.Codigo)
+                        {
+                            NodoPadre.izquierdo = Aux.izquierdo;
+                            NodoPadre.izquierdo.Derecho = Aux.Derecho;
+                        }
+                        else
+                        {
+                            NodoPadre.Derecho = Aux.izquierdo;
+                            NodoPadre.Derecho.Derecho = Aux.Derecho;
+                        }
+                    }
+                }
+            }
+        }
+        //-----------------------------------------------------------------------------------------------
+
 
         public void Recorrer(ListBox Lista)
         {
             Lista.Items.Clear();
             InOrdenAsc(Lista, Raiz);
         }
-        
+
 
         public void InOrdenAsc(ListBox Lst, Nodo R)
         {
@@ -226,7 +324,7 @@ namespace PryEstructuraDeDatos
 
         public void PreOrden(DataGridView Lst, Nodo R)
         {
-            Lst.Rows.Add(R.Codigo, R.Nombre,R.Tramite);
+            Lst.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
             if (R.izquierdo != null)
             {
                 PreOrden(Lst, R.izquierdo);
@@ -309,32 +407,33 @@ namespace PryEstructuraDeDatos
         public void PostOrden(ListBox Lst, Nodo R)
         {
             if (R.izquierdo != null) PostOrden(Lst, R.izquierdo);
-           
+
             if (R.Derecho != null) PostOrden(Lst, R.Derecho);
-            
+
             Lst.Items.Add(R.Codigo);
         }
 
         private Nodo[] vector = new Nodo[100];
         private Int32 i = 0;
+
         //----------------------------------------------------------------------------------------------------
         public void Equilibrar()
         {
             i = 0;
-            CargarVectorInOrden( Raiz);
+            CargarVectorInOrden(Raiz);
 
-            Raiz = null; EquilibrarArbo (0, i - 1);
-             
+            Raiz = null; EquilibrarArbo(0, i - 1);
+
         }
-        private void CargarVectorInOrden( Nodo NodoPadre)
+        private void CargarVectorInOrden(Nodo NodoPadre)
         {
-            if (NodoPadre . izquierdo != null)
+            if (NodoPadre.izquierdo != null)
             {
                 CargarVectorInOrden(NodoPadre.izquierdo);
             }
             vector[i] = NodoPadre;
             i = i + i;
-            if (NodoPadre.Derecho !=null)
+            if (NodoPadre.Derecho != null)
             {
                 CargarVectorInOrden(NodoPadre.Derecho);
 
@@ -350,17 +449,22 @@ namespace PryEstructuraDeDatos
                 EquilibrarArbo(m + 1, fin);
             }
         }
-        public void Recorrer ( TreeView treeArbol)
+        public void Recorrer(TreeView treeArbol)
         {
             treeArbol.Nodes.Clear();
-           PreOrdenAsc(treeArbol.Nodes, Raiz);
-        } 
-        private void PreOrdenAsc ( TreeNodeCollection Nodopadre , Nodo R)
+            PreOrdenAsc(treeArbol.Nodes, Raiz);
+        }
+        private void PreOrdenAsc(TreeNodeCollection Nodopadre, Nodo R)
         {
             TreeNode NuevoNodo = Nodopadre.Add(R.Codigo.ToString());
             if (R.izquierdo != null) PreOrdenAsc(NuevoNodo.Nodes, R.izquierdo);
             if (R.Derecho != null) PreOrdenAsc(NuevoNodo.Nodes, R.Derecho);
         }
+        
+
+        //---------------------------------------------
+
+
 
     }
 

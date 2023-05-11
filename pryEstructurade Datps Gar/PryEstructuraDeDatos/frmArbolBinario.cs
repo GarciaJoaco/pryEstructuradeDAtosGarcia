@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEstructuraDeDatos
 {
@@ -31,7 +32,17 @@ namespace PryEstructuraDeDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            if (clsArbolBinario.Raiz  != null)
+            {
+                Int32 x = Convert.ToInt32(cboElementoEliminado.Text);
+                clsArbolBinario.Eliminar (x);
+                clsArbolBinario.ListarGrillaAsc(dgvDatos);
+                clsArbolBinario.ListarComboAsc(lstCola);
+                clsArbolBinario.
+
+
+
+            }
            
         }
 
