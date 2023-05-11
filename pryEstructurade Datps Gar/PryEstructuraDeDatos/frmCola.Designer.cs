@@ -294,6 +294,7 @@ namespace PryEstructuraDeDatos
             this.Controls.Add(this.gbxNuevoElemento);
             this.DoubleBuffered = true;
             this.Name = "frmCola";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cola";
             this.Load += new System.EventHandler(this.frmCola_Load);
             this.gbxNuevoElemento.ResumeLayout(false);

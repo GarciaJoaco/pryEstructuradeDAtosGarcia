@@ -48,6 +48,8 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.gbxAcendente = new System.Windows.Forms.GroupBox();
+            this.gbxDesendente = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.gpbElementoEliminado.SuspendLayout();
             this.gpbNuevoelemento.SuspendLayout();
@@ -56,7 +58,7 @@
             // lblListado
             // 
             this.lblListado.AutoSize = true;
-            this.lblListado.Location = new System.Drawing.Point(12, 231);
+            this.lblListado.Location = new System.Drawing.Point(12, 303);
             this.lblListado.Name = "lblListado";
             this.lblListado.Size = new System.Drawing.Size(157, 13);
             this.lblListado.TabIndex = 29;
@@ -65,7 +67,7 @@
             // lstCola
             // 
             this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(15, 257);
+            this.lstCola.Location = new System.Drawing.Point(15, 329);
             this.lstCola.Name = "lstCola";
             this.lstCola.Size = new System.Drawing.Size(215, 173);
             this.lstCola.TabIndex = 27;
@@ -77,7 +79,7 @@
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dgvDatos.Location = new System.Drawing.Point(246, 257);
+            this.dgvDatos.Location = new System.Drawing.Point(246, 329);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.Size = new System.Drawing.Size(372, 173);
             this.dgvDatos.TabIndex = 26;
@@ -216,7 +218,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(543, 436);
+            this.btnAtras.Location = new System.Drawing.Point(543, 508);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 36);
             this.btnAtras.TabIndex = 30;
@@ -226,18 +228,38 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(1, 3);
+            this.treeView1.Location = new System.Drawing.Point(11, 12);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(229, 214);
             this.treeView1.TabIndex = 31;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // gbxAcendente
+            // 
+            this.gbxAcendente.Location = new System.Drawing.Point(246, 223);
+            this.gbxAcendente.Name = "gbxAcendente";
+            this.gbxAcendente.Size = new System.Drawing.Size(178, 100);
+            this.gbxAcendente.TabIndex = 32;
+            this.gbxAcendente.TabStop = false;
+            this.gbxAcendente.Text = "Acendente ";
+            // 
+            // gbxDesendente
+            // 
+            this.gbxDesendente.Location = new System.Drawing.Point(440, 223);
+            this.gbxDesendente.Name = "gbxDesendente";
+            this.gbxDesendente.Size = new System.Drawing.Size(178, 100);
+            this.gbxDesendente.TabIndex = 33;
+            this.gbxDesendente.TabStop = false;
+            this.gbxDesendente.Text = "Desendente";
             // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(639, 474);
+            this.ClientSize = new System.Drawing.Size(639, 552);
+            this.Controls.Add(this.gbxDesendente);
+            this.Controls.Add(this.gbxAcendente);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblListado);
@@ -246,7 +268,7 @@
             this.Controls.Add(this.gpbElementoEliminado);
             this.Controls.Add(this.gpbNuevoelemento);
             this.Name = "frmArbolBinario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmArbolBinario";
             this.Load += new System.EventHandler(this.frmArbolBinario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -281,5 +303,7 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.GroupBox gbxAcendente;
+        private System.Windows.Forms.GroupBox gbxDesendente;
     }
 }
