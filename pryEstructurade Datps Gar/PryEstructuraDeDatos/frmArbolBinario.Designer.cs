@@ -47,13 +47,19 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.gbxAcendente = new System.Windows.Forms.GroupBox();
-            this.gbxDesendente = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.tvArbol = new System.Windows.Forms.TreeView();
+            this.grpTipoDeOrden = new System.Windows.Forms.GroupBox();
+            this.btnPostOrden = new System.Windows.Forms.RadioButton();
+            this.btnPreOrden = new System.Windows.Forms.RadioButton();
+            this.btnInOrden = new System.Windows.Forms.RadioButton();
+            this.GrpListarDatos = new System.Windows.Forms.GroupBox();
+            this.btnDescendente = new System.Windows.Forms.RadioButton();
+            this.btnAscendente = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.gpbElementoEliminado.SuspendLayout();
             this.gpbNuevoelemento.SuspendLayout();
+            this.grpTipoDeOrden.SuspendLayout();
+            this.GrpListarDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblListado
@@ -179,6 +185,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 4;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // btnAgregar
             // 
@@ -227,51 +234,111 @@
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // treeView1
+            // tvArbol
             // 
-            this.treeView1.Location = new System.Drawing.Point(11, 12);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(229, 214);
-            this.treeView1.TabIndex = 31;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.tvArbol.Location = new System.Drawing.Point(11, 12);
+            this.tvArbol.Name = "tvArbol";
+            this.tvArbol.Size = new System.Drawing.Size(229, 214);
+            this.tvArbol.TabIndex = 31;
+            this.tvArbol.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
-            // gbxAcendente
+            // grpTipoDeOrden
             // 
-            this.gbxAcendente.Location = new System.Drawing.Point(12, 232);
-            this.gbxAcendente.Name = "gbxAcendente";
-            this.gbxAcendente.Size = new System.Drawing.Size(284, 62);
-            this.gbxAcendente.TabIndex = 32;
-            this.gbxAcendente.TabStop = false;
-            this.gbxAcendente.Text = "Acendente ";
+            this.grpTipoDeOrden.Controls.Add(this.btnPostOrden);
+            this.grpTipoDeOrden.Controls.Add(this.btnPreOrden);
+            this.grpTipoDeOrden.Controls.Add(this.btnInOrden);
+            this.grpTipoDeOrden.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpTipoDeOrden.Location = new System.Drawing.Point(39, 246);
+            this.grpTipoDeOrden.Margin = new System.Windows.Forms.Padding(2);
+            this.grpTipoDeOrden.Name = "grpTipoDeOrden";
+            this.grpTipoDeOrden.Padding = new System.Windows.Forms.Padding(2);
+            this.grpTipoDeOrden.Size = new System.Drawing.Size(285, 53);
+            this.grpTipoDeOrden.TabIndex = 35;
+            this.grpTipoDeOrden.TabStop = false;
+            this.grpTipoDeOrden.Text = "Tipo de Orden";
             // 
-            // gbxDesendente
+            // btnPostOrden
             // 
-            this.gbxDesendente.Location = new System.Drawing.Point(350, 232);
-            this.gbxDesendente.Name = "gbxDesendente";
-            this.gbxDesendente.Size = new System.Drawing.Size(252, 62);
-            this.gbxDesendente.TabIndex = 33;
-            this.gbxDesendente.TabStop = false;
-            this.gbxDesendente.Text = "Desendente";
+            this.btnPostOrden.AutoSize = true;
+            this.btnPostOrden.Location = new System.Drawing.Point(184, 19);
+            this.btnPostOrden.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPostOrden.Name = "btnPostOrden";
+            this.btnPostOrden.Size = new System.Drawing.Size(87, 20);
+            this.btnPostOrden.TabIndex = 1;
+            this.btnPostOrden.Text = "PostOrden";
+            this.btnPostOrden.UseVisualStyleBackColor = true;
             // 
-            // btnBuscar
+            // btnPreOrden
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(473, 165);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 46);
-            this.btnBuscar.TabIndex = 34;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnPreOrden.AutoSize = true;
+            this.btnPreOrden.Location = new System.Drawing.Point(90, 19);
+            this.btnPreOrden.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPreOrden.Name = "btnPreOrden";
+            this.btnPreOrden.Size = new System.Drawing.Size(80, 20);
+            this.btnPreOrden.TabIndex = 1;
+            this.btnPreOrden.Text = "PreOrden";
+            this.btnPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // btnInOrden
+            // 
+            this.btnInOrden.AutoSize = true;
+            this.btnInOrden.Location = new System.Drawing.Point(7, 19);
+            this.btnInOrden.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInOrden.Name = "btnInOrden";
+            this.btnInOrden.Size = new System.Drawing.Size(70, 20);
+            this.btnInOrden.TabIndex = 0;
+            this.btnInOrden.Text = "InOrden";
+            this.btnInOrden.UseVisualStyleBackColor = true;
+            // 
+            // GrpListarDatos
+            // 
+            this.GrpListarDatos.Controls.Add(this.btnDescendente);
+            this.GrpListarDatos.Controls.Add(this.btnAscendente);
+            this.GrpListarDatos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrpListarDatos.Location = new System.Drawing.Point(350, 231);
+            this.GrpListarDatos.Margin = new System.Windows.Forms.Padding(2);
+            this.GrpListarDatos.Name = "GrpListarDatos";
+            this.GrpListarDatos.Padding = new System.Windows.Forms.Padding(2);
+            this.GrpListarDatos.Size = new System.Drawing.Size(268, 68);
+            this.GrpListarDatos.TabIndex = 36;
+            this.GrpListarDatos.TabStop = false;
+            this.GrpListarDatos.Text = "Listar Datos";
+            // 
+            // btnDescendente
+            // 
+            this.btnDescendente.AutoSize = true;
+            this.btnDescendente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescendente.Location = new System.Drawing.Point(141, 24);
+            this.btnDescendente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDescendente.Name = "btnDescendente";
+            this.btnDescendente.Size = new System.Drawing.Size(101, 20);
+            this.btnDescendente.TabIndex = 2;
+            this.btnDescendente.TabStop = true;
+            this.btnDescendente.Text = "Descendente";
+            this.btnDescendente.UseVisualStyleBackColor = true;
+            // 
+            // btnAscendente
+            // 
+            this.btnAscendente.AutoSize = true;
+            this.btnAscendente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAscendente.Location = new System.Drawing.Point(12, 24);
+            this.btnAscendente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAscendente.Name = "btnAscendente";
+            this.btnAscendente.Size = new System.Drawing.Size(94, 20);
+            this.btnAscendente.TabIndex = 1;
+            this.btnAscendente.TabStop = true;
+            this.btnAscendente.Text = "Ascendente";
+            this.btnAscendente.UseVisualStyleBackColor = true;
             // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(613, 552);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.gbxDesendente);
-            this.Controls.Add(this.gbxAcendente);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(633, 552);
+            this.Controls.Add(this.GrpListarDatos);
+            this.Controls.Add(this.grpTipoDeOrden);
+            this.Controls.Add(this.tvArbol);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblListado);
             this.Controls.Add(this.lstCola);
@@ -287,6 +354,10 @@
             this.gpbElementoEliminado.PerformLayout();
             this.gpbNuevoelemento.ResumeLayout(false);
             this.gpbNuevoelemento.PerformLayout();
+            this.grpTipoDeOrden.ResumeLayout(false);
+            this.grpTipoDeOrden.PerformLayout();
+            this.GrpListarDatos.ResumeLayout(false);
+            this.GrpListarDatos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,9 +384,13 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnAtras;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.GroupBox gbxAcendente;
-        private System.Windows.Forms.GroupBox gbxDesendente;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TreeView tvArbol;
+        private System.Windows.Forms.GroupBox grpTipoDeOrden;
+        private System.Windows.Forms.RadioButton btnPostOrden;
+        private System.Windows.Forms.RadioButton btnPreOrden;
+        private System.Windows.Forms.RadioButton btnInOrden;
+        private System.Windows.Forms.GroupBox GrpListarDatos;
+        private System.Windows.Forms.RadioButton btnDescendente;
+        private System.Windows.Forms.RadioButton btnAscendente;
     }
 }

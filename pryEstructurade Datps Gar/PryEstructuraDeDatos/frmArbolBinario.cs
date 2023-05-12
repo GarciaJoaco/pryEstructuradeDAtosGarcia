@@ -14,6 +14,9 @@ namespace PryEstructuraDeDatos
     public partial class frmArbolBinario : Form
     {
         clsArbolBinario objArbolBinario = new clsArbolBinario();
+       
+        public bool asc = true;
+        public string recorrer;
         public frmArbolBinario()
         {
             InitializeComponent();
@@ -32,17 +35,6 @@ namespace PryEstructuraDeDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (clsArbolBinario.Raiz  != null)
-            {
-                Int32 x = Convert.ToInt32(cboElementoEliminado.Text);
-                clsArbolBinario.Eliminar (x);
-                clsArbolBinario.ListarGrillaAsc(dgvDatos);
-                clsArbolBinario.ListarComboAsc(lstCola);
-                clsArbolBinario.
-
-
-
-            }
            
         }
 
@@ -60,6 +52,16 @@ namespace PryEstructuraDeDatos
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
