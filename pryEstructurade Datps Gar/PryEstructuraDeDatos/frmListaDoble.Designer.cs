@@ -285,7 +285,7 @@
             this.Controls.Add(this.gpbNuevoelemento);
             this.Controls.Add(this.btnAtras);
             this.Name = "frmListaDoble";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmListaDoble";
             this.Load += new System.EventHandler(this.frmListaDoble_Load);
             this.gpbListarDatos.ResumeLayout(false);

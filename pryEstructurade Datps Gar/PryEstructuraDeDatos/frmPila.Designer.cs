@@ -299,7 +299,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbxNuevoElemento);
             this.Name = "frmPila";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pila";
             this.Load += new System.EventHandler(this.frmPila_Load);
             this.groupBox2.ResumeLayout(false);

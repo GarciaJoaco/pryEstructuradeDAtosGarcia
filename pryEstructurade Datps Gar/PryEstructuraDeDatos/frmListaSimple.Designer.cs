@@ -266,7 +266,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbxNuevoElemento);
             this.Name = "frmListaSimple";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmListaSimple";
             this.Load += new System.EventHandler(this.frmListaSimple_Load);
             this.groupBox2.ResumeLayout(false);
